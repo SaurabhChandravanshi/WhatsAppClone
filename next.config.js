@@ -1,21 +1,24 @@
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   webpack: (config, options) => {
+  
     config.module.rules.push({
       test: /\.styl$/,
       use: [
-        options.defaultLoaders.babel,
+        { loader: MiniCssExtractPlugin.loader },
         {
-          loader:"style-loader"
-        },{
-          loader:"css-loader"
-        }, {
-          loader:"stylus-loader"
-        }
-      ], exclude: /node_modules/,
-    })
-
+          loader: 'css-loader',
+        },
+        {
+          loader: 'stylus-loader',
+        },
+      ],
+    });
+  
+    config.plugins.push(
+      new MiniCssExtractPlugin(),
+    );
     return config
   },
 }
