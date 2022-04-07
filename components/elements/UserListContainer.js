@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import UserListItem from './UserListItem';
-import '/styles/recycler.module.styl'
+import './Recycler.module.styl'
 export default function UserListContainer() {
 
   const[data, setData] = useState([{phone:'8458835494', recent:'Hii', id:100}, {phone:'8458835494', recent:'Hii', id:101}]);

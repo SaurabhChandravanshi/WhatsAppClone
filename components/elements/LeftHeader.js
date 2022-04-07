@@ -1,8 +1,8 @@
 import React from 'react'
-import style from '/styles/header.module.styl'
+import './LeftHeader.module.styl'
 
 export default function LeftHeader() {
   return (
-    <div className={style.LeftHeader}></div>
+    <div className="leftHeader"></div>
   )
 }

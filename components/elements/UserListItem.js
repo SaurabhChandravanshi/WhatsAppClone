@@ -1,5 +1,5 @@
 import React from 'react'
-import '/styles/recycler.module.styl'
+import './Recycler.module.styl'
 
 export default function UserListItem() {
   return (
