@@ -2,11 +2,11 @@ import React from 'react'
 import LeftHeader from './LeftHeader'
 import SearchBar from './SearchBar'
 import UserListContainer from './UserListContainer'
-import './LeftContainer.module.styl'
+import './LeftContainer.styl'
 
 export default function LeftContainer() {
   return (
-    <div className='container'>
+    <div className='leftContainer'>
     <LeftHeader/>
     <SearchBar/>
     <UserListContainer/>

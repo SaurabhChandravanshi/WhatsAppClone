@@ -33,7 +33,7 @@ export default (initialState = {}) => {
   const sagaMiddleware = createSagaMiddleware();
   const enhancer = applyMiddleware(sagaMiddleware);
   const store = createStore(reducers, initialState, enhancer);
-//   store.sagaTask = sagaMiddleware.run(sagas);
+  // store.sagaTask = sagaMiddleware.run(sagas);
 
   return store;
 };

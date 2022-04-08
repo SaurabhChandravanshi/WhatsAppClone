@@ -1,6 +1,5 @@
 import React from 'react';
-import LeftHeader from '../components/elements/LeftHeader'
-import LeftContainer from '../components/elements/LeftContainer'
+import MainLayout from '../components/elements/MainLayout';
 
 class Index extends React.Component {
   static getInitialProps() {
@@ -13,9 +12,7 @@ class Index extends React.Component {
 
   render() {
     return (
-      <LeftContainer>
-        <LeftHeader/>
-      </LeftContainer>
+      <MainLayout/>
     );
   }
 }
