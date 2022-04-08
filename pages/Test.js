@@ -1,5 +1,5 @@
 import React from 'react'
-import './Test.styl'
+import './Test.module.styl'
 export default function Test() {
 
   return (
