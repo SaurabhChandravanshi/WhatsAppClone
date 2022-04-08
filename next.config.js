@@ -25,11 +25,6 @@ module.exports = {
         ignoreOrder: false,
       }),
     );
-
-    const alias = {
-      components: path.resolve(__dirname, 'components/'),
-    };
-    config.resolve.alias = { ...config.resolve.alias, ...alias };
     
     return config
   },
