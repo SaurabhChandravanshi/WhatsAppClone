@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
     "next": "^12.0.2",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^4.0.0",
@@ -25,12 +26,12 @@
     "redux-saga": "^1.0.5"
   },
   "devDependencies": {
+    "css-loader": "^3.2.0",
     "nodemon": "^2.0.15",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.5",
-    "stylus-loader": "^3.0.2",
-    "css-loader": "^3.2.0",
-    "stylus": "^0.57.0"
+    "stylus": "^0.57.0",
+    "stylus-loader": "^3.0.2"
   },
   "optionalDependencies": {
     "mini-css-extract-plugin": "^0.8.0"

@@ -1,14 +1,14 @@
 import React from 'react'
-import LeftContainer from './LeftContainer'
-import RightContainer from './RightContainer'
+import ChatContainer from './ChatContainer'
+import ConversationContainer from './ConversationContainer'
 
 import './Layout.module.styl';
 
 export default function MainLayout() {
   return (
     <div className='container'>
-    <LeftContainer/>
-    <RightContainer/>
+    <ChatContainer/>
+    <ConversationContainer/>
     </div>
   )
 }

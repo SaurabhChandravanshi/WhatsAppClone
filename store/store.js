@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers/index'
+import {watcherSaga} from './sagas/rootSaga'
 
 
 const sagas = function* sagas() {
@@ -15,25 +16,11 @@ const sagas = function* sagas() {
 //   yield* interviewPrepSaga();
 //   yield* practiceSaga();
 };
-const rootReducer = combineReducers({
-//   developers: DeveloperReducer,
-//   auth: AuthReducer,
-//   header: HeaderReducer,
-//   mockInterview: MockInterviewReducer,
-//   leaderboard: LeaderboardReducer,
-//   practiceProblemListing: PracticeProblemListingReducer,
-//   profile: ProfileReducer,
-//   common: CommonReducer,
-//   badges: BadgesReducer,
-//   interviewPrep: InterviewPrepReducer,
-//   practice: PracticeReducer,
-});
 
 export default (initialState = {}) => {
   const sagaMiddleware = createSagaMiddleware();
   const enhancer = applyMiddleware(sagaMiddleware);
   const store = createStore(reducers, initialState, enhancer);
-  // store.sagaTask = sagaMiddleware.run(sagas);
-
+  store.sagaTask = sagaMiddleware.run(watcherSaga)
   return store;
 };
