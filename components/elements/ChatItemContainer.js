@@ -4,11 +4,10 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ChatItem from './ChatItem';
 import './ChatItem.styl'
-export default function UserListContainer() {
+export default function ChatItemContainer() {
 
   const chatData = useSelector(store => store.chat);
   const disptach = useDispatch();
-
 
   useEffect(()=> {
     disptach({type:'GET_CHAT'})
@@ -17,9 +16,9 @@ export default function UserListContainer() {
   return (
     <div className='chatItemContainer'>
       {
-        chatData.map((e) => {
+        chatData.map((e, index) => {
           return (
-            <ChatItem key={e.id} chatData={e}/>
+            <ChatItem key={index} chatData={e}/>
           )
         })
       }
