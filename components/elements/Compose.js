@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import './CompStyles/Compose.styl';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 export default function Compose({phone}) {
   const [input, setInput] = useState('');
@@ -34,7 +33,9 @@ export default function Compose({phone}) {
            </form>
        </div>
        <div className='composeMenus'>
+       <div>
        <svg onClick={(e) => handleInput(e)} viewBox="0 0 24 24" width="24" height="24" className=""><path fill="#54656f" d="M1.101 21.757 23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg>
+       </div>
        </div>
     </div>
   )

@@ -1,28 +1,35 @@
 .composeContainer
-    position: fixed;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    column-count: 3;
+    grid-template-columns: 10% 50% 10%;
     bottom: 0;
-    background: red;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1000;
     min-height: 62px;
     width: 100%;
     background-color: #A2B9D2;
+
+@media screen and (max-width: 600px)
+    .composeContainer
+         justify-content: space-around
 
 .composeMenus
     display: flex;
     flex-direction: row;
     column-gap: 20px;
     cursor: pointer;
+    justify-content: center;
     margin: 20px 20px;
 
 .field
-    margin: 10px 20px;
+    margin: 10px 10px;
 
 .input
     height: 45px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    padding: 0px 20px;
-    min-width: 50vw;
+    padding: 0px 10px;
+    width: 100%;
     font-size: 16px;
     outline: none;
