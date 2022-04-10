@@ -2,7 +2,7 @@ import React from 'react'
 import ChatHeader from './ChatHeader'
 import SearchBar from './SearchBar'
 import ChatItemContainer from './ChatItemContainer'
-import './ChatContainer.styl'
+import './CompStyles/ChatContainer.styl'
 
 export default function LeftContainer() {
   return (

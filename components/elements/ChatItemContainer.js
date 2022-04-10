@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ChatItem from './ChatItem';
-import './ChatItem.styl'
+import './CompStyles/ChatItem.styl'
 export default function ChatItemContainer() {
 
   const chatData = useSelector(store => store.chat);

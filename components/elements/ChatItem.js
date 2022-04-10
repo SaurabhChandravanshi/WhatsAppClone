@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import './ChatItem.styl'
+import './CompStyles/ChatItem.styl'
 
 export default function ChatItem({chatData}) {
   const dispatch = useDispatch();

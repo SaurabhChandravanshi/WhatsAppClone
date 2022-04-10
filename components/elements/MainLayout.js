@@ -1,7 +1,7 @@
 import React from 'react'
 import ChatContainer from './ChatContainer'
 import ConversationContainer from './ConversationContainer'
-import './Layout.module.styl';
+import './CompStyles/Layout.module.styl';
 
 export default function MainLayout() {
 

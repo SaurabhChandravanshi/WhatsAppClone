@@ -24,7 +24,7 @@ const chatReducer = (state = initialState, action) => {
             return state.map((e) => {
                 if(e.phone == action.payload.phone) {
                     e.conversation = [...e.conversation, {message:action.payload.message, isOutgoing:true}]
-                } 
+                }
                 return e;
             })
         default:
