@@ -4,10 +4,10 @@ import { useState } from 'react';
 import './CompStyles/Compose.styl';
 import { useSelector } from 'react-redux';
 
-export default function Compose({phone}) {
+export default function Compose({phone, conversation}) {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
-  const conversation = useSelector(store => store.conversation)
+  
   
   const handleInput = (e) => {
     e.preventDefault()
@@ -15,7 +15,7 @@ export default function Compose({phone}) {
       return;
     }
     dispatch({type:'SET_CONVERSATION', 
-    payload:{phone, conversation:[...conversation.conversation, {message:input, isOutgoing:true}]}})
+    payload:{phone, conversation:[...conversation.get('conversation'), {message:input, isOutgoing:true}]}})
     dispatch({type:'ADD_MESSAGE', payload:{phone:phone, message:input}})
     setInput('')
   }

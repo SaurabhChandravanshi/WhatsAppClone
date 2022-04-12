@@ -5,7 +5,7 @@ export default function MessageContainer({chatData}) {
   return (
     <div className='msgContainer'>
         {
-            chatData.conversation.map((e, index) => {
+            chatData.get('conversation').map((e, index) => {
                 return (
                     <MessageItem  item={e} key={index}/>
                 )

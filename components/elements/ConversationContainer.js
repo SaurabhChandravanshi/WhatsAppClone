@@ -5,19 +5,22 @@ import EmptyConversation from './EmptyConversation';
 import Compose from './Compose'
 import { useSelector } from 'react-redux'
 import MessageContainer from './MessageContainer';
+import { connect } from 'react-redux';
+import { Map } from 'immutable';
 
-export default function ConversationContainer() {
-  const conversation = useSelector((store) => store.conversation)
+export default function ConversationContainer({conversation}) {
+  //const conversation = useSelector((store) => store.conversation)
+
   return (
     <>
       {
         <div className='conv'>
           {
-            conversation.phone ? (
+            conversation.get('phone') ? (
               <>
-                <ConversationHeader title={conversation.phone} />
+                <ConversationHeader title={conversation.get('phone')} />
                 <MessageContainer chatData={conversation}/>
-                <Compose phone={conversation.phone}  />
+                <Compose phone={conversation.get('phone')} conversation={conversation} />
               </>
             ) : <EmptyConversation/>
           }

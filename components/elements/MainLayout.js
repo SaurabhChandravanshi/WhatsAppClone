@@ -4,10 +4,11 @@ import ConversationContainer from './ConversationContainer'
 import './CompStyles/Layout.module.styl';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+import { Map } from 'immutable';
 
-export default function MainLayout() {
+function MainLayout({conversation}) {
   const [windowWidth, setWindowWidth] = useState(0);
-  const conversation = useSelector(store => store.conversation)
   const onWindowResize = () => {
     setWindowWidth(window.innerWidth);
   }
@@ -26,10 +27,13 @@ export default function MainLayout() {
       windowWidth < 600 ? conversation.phone ? <ConversationContainer/> : <ChatContainer/> : (
         <div className='container'>
           <ChatContainer />
-          <ConversationContainer />
+          <ConversationContainer conversation={Map(conversation)} />
         </div>
         )
     }
     </>
   )
 }
+
+const mapStateToProps = state => ({conversation:state.conversation})
+export default connect(mapStateToProps)(MainLayout)

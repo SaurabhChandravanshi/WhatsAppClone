@@ -1,4 +1,6 @@
-const initialState = [];
+import { List } from "immutable";
+
+const initialState = List();
 
 
 export const addChat = (data)=> {
@@ -19,7 +21,7 @@ const chatReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'SET_CHAT':
             const {payload} = action;
-            return payload;
+            return state = List(payload);
         case 'ADD_MESSAGE':
             return state.map((e) => {
                 if(e.phone == action.payload.phone) {
